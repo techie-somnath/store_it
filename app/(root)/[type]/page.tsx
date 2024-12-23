@@ -9,9 +9,13 @@ const Page = async ({ searchParams, params }: SearchParamProps) => {
   const type = ((await params)?.type as string) || "";
   const searchText = ((await searchParams)?.query as string) || "";
   const sort = ((await searchParams)?.sort as string) || "";
-
   const types = getFileTypesParams(type) as FileType[];
   const files = await getFiles({ types, searchText, sort });
+  // const totalSpace = await getTotalSpaceUsed();
+  // const usageSummary = getUsageSummary(totalSpace);
+  // const documentTotalFileSize = usageS
+  // console.log(type);
+  // console.log(usageSummary);
 
   return (
     <div className="page-container">
@@ -20,7 +24,7 @@ const Page = async ({ searchParams, params }: SearchParamProps) => {
 
         <div className="total-size-section">
           <p className="body-1">
-            Total: <span className="h5">0 MB</span>
+            {/* Total: <span className="h5">0 MB</span> */}
           </p>
 
           <div className="sort-container">

@@ -37,7 +37,7 @@ const Search = () => {
   }, [debouncedQuery]);
 
   useEffect(() => {
-    if (searchQuery) {
+    if (!searchQuery) {
       setQuery("");
     }
   }, [searchQuery]);

@@ -26,6 +26,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { renameFile} from "@/lib/actions/file.actions";
+import { FileDetails } from "./ActionsModalContent";
 
 const ActionDropdown = ({ file }: { file: Models.Document }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -80,7 +81,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
               onChange={(e) => setName(e.target.value)}
             />
           )}
-          {/* {value === "details" && <FileDetails file={file} />}
+          {value === "details" && <FileDetails file={file} />}
           {value === "share" && (
             <ShareInput
               file={file}
@@ -93,7 +94,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
               Are you sure you want to delete{` `}
               <span className="delete-file-name">{file.name}</span>?
             </p>
-          )} */}
+          )}
         </DialogHeader>
         {["rename", "delete", "share"].includes(value) && (
           <DialogFooter className="flex flex-col gap-3 md:flex-row">
